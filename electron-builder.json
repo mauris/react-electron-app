@@ -1,0 +1,35 @@
+{
+  "productName": "electron-react-app",
+  "directories": {
+    "output": "app-builds"
+  },
+  "files": [
+    "build/**/*",
+    "!LICENSE.md",
+    "!package.json",
+    "!package-lock.json",
+    "!src/",
+    "!Procfile"
+  ],
+  "win": {
+    "icon": "dist",
+    "target": [
+      "portable",
+      "nsis",
+      "msi"
+    ]
+  },
+  "mac": {
+    "icon": "dist",
+    "target": [
+      "dmg"
+    ]
+  },
+  "linux": {
+    "icon": "dist",
+    "target": [
+      "AppImage",
+      "deb"
+    ]
+  }
+}
