@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import logo from '../logo.svg';
-import './index.css';
+import './index.scss';
 
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.title = 'Welcome to react-eletron-app boilerplate.';
+    this.title = 'Welcome to react-electron-app boilerplate.';
   }
 
   render() {
