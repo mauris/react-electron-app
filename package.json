@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "electron": "^4.0.5",
     "node-sass": "^4.11.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
@@ -22,7 +23,7 @@
     "electron:all": "npm run build-react && electron-builder build --linux && electron-builder build --mac && electron-builder build --windows",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src"
+    "lint": "eslint src electron"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,7 +36,6 @@
   ],
   "devDependencies": {
     "cross-env": "^5.2.0",
-    "electron": "^4.0.5",
     "electron-builder": "^20.38.5",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-react": "^7.12.4",
