@@ -9,6 +9,8 @@
     "!package.json",
     "!package-lock.json",
     "!src/",
+    "!public/",
+    "!app-builds/",
     "!Procfile"
   ],
   "win": {
