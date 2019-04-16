@@ -3,7 +3,11 @@
   "directories": {
     "output": "app-builds"
   },
+  "extraMetadata": {
+    "main": "electron/index.js"
+  },
   "files": [
+    "electron/**/*",
     "build/**/*",
     "!LICENSE.md",
     "!package.json",
