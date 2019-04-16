@@ -5,6 +5,15 @@ import './index.scss';
 const { shell } = window.require('electron');
 
 export default class App extends Component {
+  static renderBrowserOpenHandler() {
+    return (event) => {
+      const { target } = event;
+      const url = target.attributes.href.value;
+      shell.openExternal(url);
+      event.preventDefault();
+    };
+  }
+
   constructor(props) {
     super(props);
     this.title = 'Welcome to react-electron-app boilerplate.';
@@ -23,15 +32,6 @@ export default class App extends Component {
         caption: 'react-electron-app boilerplate',
       },
     ];
-  }
-
-  renderBrowserOpenHandler() {
-    return (event) => {
-      const { target } = event;
-      const url = target.attributes.href.value;
-      shell.openExternal(url);
-      event.preventDefault();
-    };
   }
 
   render() {
