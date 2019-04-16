@@ -2,10 +2,36 @@ import React, { Component } from 'react';
 import logo from '../logo.svg';
 import './index.scss';
 
+const { shell } = window.require('electron');
+
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.title = 'Welcome to react-electron-app boilerplate.';
+
+    this.links = [
+      {
+        url: 'https://reactjs.org/',
+        caption: 'Learn React',
+      },
+      {
+        url: 'https://electronjs.org/',
+        caption: 'Learn Electron',
+      },
+      {
+        url: 'https://github.com/mauris/react-electron-app',
+        caption: 'react-electron-app boilerplate',
+      },
+    ];
+  }
+
+  renderBrowserOpenHandler() {
+    return (event) => {
+      const { target } = event;
+      const url = target.attributes.href.value;
+      shell.openExternal(url);
+      event.preventDefault();
+    };
   }
 
   render() {
@@ -16,14 +42,15 @@ export default class App extends Component {
           <p>
             {this.title}
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          {this.links.map(entry => (
+            <a
+              className="App-link"
+              href={entry.url}
+              onClick={this.renderBrowserOpenHandler()}
+            >
+              {entry.caption}
+            </a>
+          ))}
         </header>
       </div>
     );
