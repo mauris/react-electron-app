@@ -10,7 +10,7 @@
     "react-scripts": "2.1.5"
   },
   "homepage": "./",
-  "main": "public/electron.js",
+  "main": "electron/index.js",
   "scripts": {
     "start": "nf start",
     "start-react": "cross-env BROWSER='none' react-scripts start",
